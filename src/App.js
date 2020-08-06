@@ -4,6 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import UserForm from './Components/UserForm';
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <Switch>
           
           <Route path="/users">
-            <h1>USERS</h1>
+            <UserForm/>
           </Route>
 
           <Route path="/">
