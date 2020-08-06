@@ -1,11 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import userService from '../Services/userService'
 const UserForm = () => {
 
     const {register, errors, handleSubmit} = useForm();
 
     const onSubmit = (data, e) =>{
-        console.log(data)
+        console.log(data);
+        userService.create(data)
+            .then(response =>{
+                console.log(response);
+                console.log(data);
+            }).catch( e =>{
+                console.log(e);
+            })
         e.target.reset()
     }
     return (
@@ -13,9 +21,9 @@ const UserForm = () => {
            <h1>User</h1> 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
-                    name="userName"
+                    name="email"
                     className="form-control my-2"
-                    placeholder="User name"
+                    placeholder="email"
                     ref={
                         register({
                             required: { value: true, message: 'missing user name'}

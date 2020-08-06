@@ -5,7 +5,7 @@ const getAll = () => {
 }
 
 const create = data => {
-    return http.get("/users");
+    return http.post("/users");
 }
 
 const get = id => {
@@ -15,3 +15,10 @@ const get = id => {
 const remove = id => {
     return http.delete(`/users/${id}`)
 }
+
+export default{
+    getAll,
+    create,
+    get,
+    remove
+};
