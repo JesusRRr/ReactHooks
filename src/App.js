@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import UserForm from './Components/UserForm';
+import Users from './Components/Users';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Switch>
           
           <Route path="/users">
-            <UserForm/>
+            <Users/>
           </Route>
 
           <Route path="/">

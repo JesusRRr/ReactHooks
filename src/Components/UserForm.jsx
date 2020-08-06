@@ -18,7 +18,7 @@ const UserForm = () => {
     }
     return (
         <div className="container">
-           <h1>User</h1> 
+           <h3>Register</h3> 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                     name="email"

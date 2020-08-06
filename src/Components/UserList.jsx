@@ -14,6 +14,7 @@ const UserList = () => {
         userService.getAll()
           .then(response =>{
             setUsers(response.data)
+            console.log(response.data);
           }).catch( e => {
               console.log(e);
           })
@@ -21,14 +22,18 @@ const UserList = () => {
 
     return (
         <div>
-            <h1>Users</h1>
+            <h3>Users</h3>
             <ul>
-                {users && users.map( (user, index) =>{
-                    <li key={index}>
-                        {user}
+                {users.map((user,index)=>(
+                    <li 
+                        key={index}
+                        className="list-group-item"
+                    >
+                        {user.email}
                     </li>
-                })}
-            </ul>
+                    
+                ))}
+            </ul>  
         </div>
     )
 }
